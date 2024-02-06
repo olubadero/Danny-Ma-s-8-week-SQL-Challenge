@@ -1,4 +1,4 @@
-
+use pizza_runner;
 				-- D. Pricing and Ratings
 -- If a Meat Lovers pizza costs $12 and Vegetarian costs $10 and there were no charges for changes - 
 -- how much money has Pizza Runner made so far if there are no delivery fees?
@@ -61,7 +61,21 @@ WHERE Cancellation IS NULL;
 -- The Pizza Runner team now wants to add an additional ratings system that allows customers to rate their runner, 
 -- how would you design an additional table for this new dataset 
 -- generate a schema for this new table and insert your own data for ratings for each successful customer order between 1 to 5.
+CREATE TABLE `pizza_runner`.`Customer_Review` (
+  `Order_ID` INT NOT NULL,
+  `Customer_Rating` INT NULL,
+  `Customer_Review` VARCHAR(50) NULL);
 
+INSERT INTO `pizza_runner`.`Customer_review` 
+VALUES
+(1, 2, 'Delivery was slow'), 
+(2, 2, 'Pizza arrived late'),
+(3, 3, 'Good service, delivery time is not bad'),
+(4, 1, 'Pizza arrived cold because delivery took too long'),
+(5, 5, 'Pizza was delivered promptly'),
+(7, 3, 'Pizza was nice but delivery time could be better'),
+(8, 4, 'Impressive delivery time'),
+(10, 5, 'Rider was courteous and delivery was swift');
 
 
 -- Using your newly generated table - can you join all of the information together to form a table which has the following information for successful deliveries?
@@ -75,8 +89,19 @@ WHERE Cancellation IS NULL;
 -- Delivery duration
 -- Average speed
 -- Total number of pizzas
+WITH X AS (SELECT *
+		FROM new_customers_order
+		JOIN runner_orders
+		USING (order_id)
+		WHERE cancellation IS NULL) 
+        
+SELECT customer_id, x.order_id, runner_id, customer_rating, Customer_review, order_time, pickup_time,
+		 timestampdiff(minute, order_time, pickup_time) AS Prep_time, duration, ROUND(distance/duration*60, 2) as average_speed, 
+         count(pizza_id) as Total_orders
 
-
-
-
+FROM X
+JOIN customer_review as CR
+USING (order_id)
+GROUP BY customer_id, x.order_id, runner_id, customer_rating, Customer_review, order_time, pickup_time, duration, distance
+ORDER BY customer_id;
 
