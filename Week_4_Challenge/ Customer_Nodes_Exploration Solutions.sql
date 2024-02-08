@@ -1,8 +1,3 @@
-USE data_bank;
-SELECT * FROM customer_nodes;
-SELECT * FROM customer_transactions;
-SELECT * FROM regions;
-
 
 				-- A. Customer Nodes Exploration
 -- How many unique nodes are there on the Data Bank system?
@@ -39,8 +34,6 @@ ORDER BY Total_customers DESC;
 -- 'Africa', 		'102'
 -- 'Asia', 			'95'
 -- 'Europe', 		'88'
-
-
 
 -- How many days on average are customers reallocated to a different node?
 
