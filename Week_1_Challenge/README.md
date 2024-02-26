@@ -268,3 +268,6 @@ ORDER BY customer_id;
 
 
 -- A has 1520 points, B has 1090 points. 
+
+### Thank you for viewing this project, I hope it was straightforward and understandable. 
+
