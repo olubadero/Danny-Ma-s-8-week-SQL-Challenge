@@ -44,7 +44,7 @@ GROUP BY runner_id;
 
 ---
 
--- How many of each type of pizza was delivered?
+4. How many of each type of pizza was delivered?
 ```sql
 SELECT pizza_id, COUNT(*) AS Pizza_Types_Delivered
 FROM New_Customers_Order
@@ -62,7 +62,7 @@ GROUP BY pizza_id;
 
 ---
 
--- How many Vegetarian and Meatlovers were ordered by each customer?
+5. How many Vegetarian and Meatlovers were ordered by each customer?
 ```sql
 SELECT customer_id, pizza_name,COUNT(pizza_name) AS Orders
 FROM New_Customers_Order
@@ -90,7 +90,7 @@ ORDER BY customer_id;
 
 ---
 
--- What was the maximum number of pizzas delivered in a single order?
+6. What was the maximum number of pizzas delivered in a single order?
 ```sql
 SELECT Customer_id, order_id, date(order_time) AS order_date, COUNT(*) AS orders
 FROM New_Customers_Order
@@ -105,7 +105,7 @@ LIMIT 1;
 | ----------- | ----------- | ----------- | ----------- | 
 | 103	| 4	| 2020-01-04	| 3 |
 
--- Customer 103 ordered 3 pizzas on the 4th of January
+7. Customer 103 ordered 3 pizzas on the 4th of January
 
 ---
 
@@ -125,7 +125,7 @@ WHERE cancellation IS NULL
 GROUP BY customer_id;
 ```
 
--- number of pizzas that had changes and those that had no changes
+8. number of pizzas that had changes and those that had no changes
 
 | customer_id |	Changes | NO_Changes |
 | ----------- | ----------- | ----------- | 
@@ -137,7 +137,7 @@ GROUP BY customer_id;
 
 ---
 
--- How many pizzas were delivered that had both exclusions and extras?
+9. How many pizzas were delivered that had both exclusions and extras?
 ```sql
 SELECT Customer_id, COUNT(*) Number_of_Pizzas
 FROM New_Customers_Order
@@ -155,7 +155,7 @@ GROUP BY Customer_id;
 
 ---
 
--- What was the total volume of pizzas ordered for each hour of the day?
+10. What was the total volume of pizzas ordered for each hour of the day?
 ```sql
 SELECT date(Order_Time) AS order_date, HOUR(Order_Time) AS order_hour, COUNT(Order_ID) AS order_volume
 FROM new_customers_order
@@ -177,7 +177,7 @@ ORDER BY ORDER_DATE;
 
 ---
 
--- What was the volume of orders for each day of the week?
+11. What was the volume of orders for each day of the week?
 ```sql
 SELECT DAYNAME(Order_Time) AS order_day, COUNT(Order_ID) AS order_volume
 FROM new_customers_order
