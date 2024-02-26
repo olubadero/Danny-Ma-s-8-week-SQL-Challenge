@@ -33,7 +33,7 @@ Danny has shared with you 3 key datasets for this case study:
 Each of the following case study questions can be answered using a single SQL statement:
 
 1. What is the total amount each customer spent at the restaurant?
-  ```sql
+```sql
 SELECT customer_id, CONCAT('$', SUM(price)) AS total_spend
 FROM sales
 JOIN menu
