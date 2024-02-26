@@ -18,7 +18,7 @@ sales
 menu
 members
 
-**You Can view and copy the Data Schema in the Schema folder to practice**
+**You Can view and copy the [Data Schema](https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/blob/main/Week_1_Challenge/Dannys_Diner%20Schema.sql) to practice**
 
 ## Case Study Questions
 
