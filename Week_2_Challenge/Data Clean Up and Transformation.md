@@ -1,4 +1,4 @@
-- Clean Up of the Runner_Orders Table
+## Clean Up of the Runner_Orders Table
 - Create a copy of the original Runner Order Table before clean up
   
 ```sql
@@ -27,7 +27,11 @@ VALUES
   ('9', '2', 'null', 'null', 'null', 'Customer Cancellation'),
   ('10', '1', '2020-01-11 18:50:20', '10km', '10minutes', 'null');
 ```
-  
+Here is a screenshot of the newly created table:
+
+<img width="371" alt="Screenshot 2024-02-26 at 18 30 54" src="https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/assets/111298078/7b10874c-c500-4095-937a-a6e2bc1cc07a">
+
+
 ---
 - The first step is to convert all Varchar 'null' to null values
 ```sql
@@ -61,6 +65,7 @@ WHERE Order_ID IN (1, 2);
 ```
 
 - Then, I will clean up replace the Distance, Duration and Cancellation columns replacing words within it with blank spaces
+  
 ```sql
 UPDATE runner_orders
 SET Distance = REPLACE(Distance, 'km', '')
@@ -110,9 +115,18 @@ ALTER TABLE runner_orders
 MODIFY COLUMN duration FLOAT;
 ```
 
+Here is the result of the clean up:
+
+<img width="317" alt="Screenshot 2024-02-26 at 18 31 31" src="https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/assets/111298078/2aad2280-5e45-4d21-8f9b-6c4358b35742">
+
 ---
 
 ## Clean Up of the Customer_Orders Table
+
+There is a need to clean up the below original table to avoid getting the wrong results to questions:
+
+<img width="323" alt="Screenshot 2024-02-26 at 18 21 54" src="https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/assets/111298078/d3755bdb-801a-4c7e-9cc0-c08a6475eddc">
+
 - Actions:
 1. Create a new table after filling in the missing
 2. convert 'null' and ' ' to null values then create a new table with the query
@@ -133,3 +147,8 @@ CREATE TABLE New_Customers_Order AS
           END AS Extras, Order_Time
   FROM customer_orders;
 ```
+
+Here is the result of the clean up:
+
+<img width="327" alt="Screenshot 2024-02-26 at 18 27 26" src="https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/assets/111298078/fc5e1a8b-4723-4d29-a68c-ad067bb0becd">
+
