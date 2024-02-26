@@ -35,6 +35,8 @@ ORDER BY customer_id;
 ```
 -- A is $76, B is $74, C is $36
 
+
+
 2. How many days has each customer visited the restaurant?
 
  ```sql
@@ -43,6 +45,8 @@ FROM sales
 GROUP BY customer_id;
 ```
 -- A is 4, B is 6, C is 2
+
+
 
 3. What was the first item from the menu purchased by each customer?
 
@@ -58,6 +62,7 @@ FROM purchase
 WHERE Orders = 1;
 ```
 -- A is Sushi and Curry; B is Curry; C is Ramen (2x)
+
 
 
 4. What is the most purchased item on the menu and how many times was it purchased by all customers?
@@ -85,6 +90,7 @@ GROUP BY customer_id;
 -- A and C ordered it 3x respectively and B ordered it 2x
 
 
+
 5. Which item was the most popular for each customer?
 
 ```sql
@@ -100,6 +106,7 @@ FROM popularity
 WHERE order_ranking = 1;
 ```
 -- The most popular item for A is Ramen; for B it is Curry, Sushi and Ramen; and for C is Ramen
+
 
 
 6. Which item was purchased first by the customer after they became a member?
@@ -121,6 +128,7 @@ WHERE order_standing = 1;
 -- Only A and B joined and their first orders were Curry and Sushi respectively
 
 
+
 7. Which item was purchased just before the customer became a member?
 
 ```sql
@@ -140,6 +148,7 @@ WHERE order_standing = 1;
 -- The item purchased before joining by A is Sushi and Curry, whilst B is Sushi
 
 
+
 8. What is the total items and amount spent for each member before they became a member?
 
 ```sql
@@ -153,6 +162,8 @@ WHERE order_date < join_date
 GROUP BY customer_id;
 ```
 -- A ordered twice and spent $25, B ordered twice and spent $40
+
+
  
 9. If each $1 spent equates to 10 points and sushi has a 2x points multiplier - how many points would each customer have?
 
@@ -166,6 +177,7 @@ USING (product_id)
 GROUP BY customer_id;
 ```
 -- A has 860 points, B has 940 points, C has 360 points 
+
 
 
 10. In the first week after a customer joins the program (including their join date) they earn 2x points on all items, not just sushi - how many points do customer A and B have at the end of January?
