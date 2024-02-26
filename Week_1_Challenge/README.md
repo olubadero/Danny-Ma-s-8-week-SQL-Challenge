@@ -22,6 +22,9 @@ Danny has shared with you 3 key datasets for this case study:
 
 ## Case Study Questions
 
+![answer_questions](https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/assets/111298078/99614ad3-dc19-4ca9-bf16-0212f8ff4bcb)
+
+
 Each of the following case study questions can be answered using a single SQL statement:
 
 1. What is the total amount each customer spent at the restaurant?
