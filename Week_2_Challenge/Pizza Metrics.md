@@ -185,10 +185,12 @@ GROUP BY DAYNAME(Order_Time);
 ```
 
 -- The daily pizza orders are distributed as follows
--- order_day	order_volume
--- Wednesday		5
--- Thursday			3
--- Friday			1
--- Saturday			5
+| order_day | order_volume |
+| ----------- | ----------- | 
+| Wednesday	| 5 |
+| Thursday	| 3 |
+| Saturday	| 5 |
+| Friday	| 1 |
+
 
 ---
