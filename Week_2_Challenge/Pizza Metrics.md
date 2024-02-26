@@ -125,7 +125,7 @@ WHERE cancellation IS NULL
 GROUP BY customer_id;
 ```
 
-8. number of pizzas that had changes and those that had no changes
+-- number of pizzas that had changes and those that had no changes:
 
 | customer_id |	Changes | NO_Changes |
 | ----------- | ----------- | ----------- | 
@@ -137,7 +137,7 @@ GROUP BY customer_id;
 
 ---
 
-9. How many pizzas were delivered that had both exclusions and extras?
+8. How many pizzas were delivered that had both exclusions and extras?
 ```sql
 SELECT Customer_id, COUNT(*) Number_of_Pizzas
 FROM New_Customers_Order
@@ -155,7 +155,7 @@ GROUP BY Customer_id;
 
 ---
 
-10. What was the total volume of pizzas ordered for each hour of the day?
+9. What was the total volume of pizzas ordered for each hour of the day?
 ```sql
 SELECT date(Order_Time) AS order_date, HOUR(Order_Time) AS order_hour, COUNT(Order_ID) AS order_volume
 FROM new_customers_order
@@ -177,7 +177,7 @@ ORDER BY ORDER_DATE;
 
 ---
 
-11. What was the volume of orders for each day of the week?
+10. What was the volume of orders for each day of the week?
 ```sql
 SELECT DAYNAME(Order_Time) AS order_day, COUNT(Order_ID) AS order_volume
 FROM new_customers_order
