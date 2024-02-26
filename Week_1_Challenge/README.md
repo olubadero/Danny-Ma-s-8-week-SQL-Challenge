@@ -20,12 +20,15 @@ Danny has shared with you 3 key datasets for this case study:
 
 **You Can view and copy the [Data Schema](https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/blob/main/Week_1_Challenge/Dannys_Diner%20Schema.sql) to practice**
 
+---
+
 ## Case Study Questions
 
 ![answer_questions](https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/assets/111298078/99614ad3-dc19-4ca9-bf16-0212f8ff4bcb)
 
-
 **I will be executing my SQL queries using the MySQL workbench.**
+
+---
 
 Each of the following case study questions can be answered using a single SQL statement:
 
@@ -47,7 +50,7 @@ ORDER BY customer_id;
 
 -- A is $76, B is $74, C is $36
 
-
+---
 
 2. How many days has each customer visited the restaurant?
 
@@ -64,6 +67,8 @@ GROUP BY customer_id;
 | C | 2 |
 
 -- A is 4, B is 6, C is 2
+
+---
 
 3. What was the first item from the menu purchased by each customer?
 
@@ -89,6 +94,7 @@ WHERE Orders = 1;
 
 -- A is Sushi and Curry; B is Curry; C is Ramen (2x)
 
+---
 
 4. What is the most purchased item on the menu and how many times was it purchased by all customers?
 
@@ -121,6 +127,7 @@ GROUP BY customer_id;
 -- Most purchased item is Ramen and it was purchased 8 times, 
 -- A and C ordered it 3x respectively and B ordered it 2x
 
+---
 
 5. Which item was the most popular for each customer?
 
@@ -147,7 +154,7 @@ WHERE order_ranking = 1;
 
 -- The most popular item for A is Ramen; for B it is Curry, Sushi and Ramen; and for C is Ramen
 
-
+---
 
 6. Which item was purchased first by the customer after they became a member?
 
@@ -174,6 +181,7 @@ WHERE order_standing = 1;
 
 -- Only A and B joined and their first orders were Curry and Sushi respectively
 
+---
 
 7. Which item was purchased just before the customer became a member?
 
@@ -200,6 +208,7 @@ WHERE order_standing = 1;
 
 -- The item purchased before joining by A is Sushi and Curry, whilst B is Sushi
 
+---
 
 8. What is the total items and amount spent for each member before they became a member?
 
@@ -219,9 +228,9 @@ GROUP BY customer_id;
 | A | 2 | $25 | 
 | B | 2 | $40 | 
 
-
 -- A ordered twice and spent $25, B ordered twice and spent $40
 
+---
  
 9. If each $1 spent equates to 10 points and sushi has a 2x points multiplier - how many points would each customer have?
 
@@ -243,6 +252,7 @@ GROUP BY customer_id;
 
 -- A has 860 points, B has 940 points, C has 360 points 
 
+---
 
 10. In the first week after a customer joins the program (including their join date) they earn 2x points on all items, not just sushi - how many points do customer A and B have at the end of January?
 
@@ -268,6 +278,8 @@ ORDER BY customer_id;
 
 
 -- A has 1520 points, B has 1090 points. 
+
+---
 
 ### Thank you for viewing this project, I hope it was straightforward and understandable. 
 
