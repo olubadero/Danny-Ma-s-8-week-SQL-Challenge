@@ -16,9 +16,11 @@ WHERE Cancellation IS NULL
 GROUP BY pizza_name;
 ```
 
--- pizza_name, 		Total_Sales
--- 'Meatlovers',		'$108'
--- 'Vegetarian',		'$30'
+| pizza_name |	Total_Sales |
+|------------ |------------ |
+| Meatlovers | $108 |
+| Vegetarian |	$30 |
+
 
 ---
 
@@ -45,9 +47,10 @@ FROM Price_lIST
 GROUP BY pizza_name;
 ```
 
--- pizza_name, 		total_sales
--- 'Vegetarian',		'$31'
--- 'Meatlovers',		'$124'
+| pizza_name	| total_sales |
+|------------ |------------ |
+| Meatlovers	| $124 |
+| Vegetarian	| $31 |
 
 ---
 
@@ -66,8 +69,9 @@ USING (pizza_id)
 WHERE Cancellation IS NULL;
 ```
 
--- Post_Delivery_Sales
--- '$73.38'
+Post_Delivery_Sales |
+| ------------ |
+ | $73.38  |
 
 ---
 
@@ -91,6 +95,9 @@ VALUES
 (8, 4, 'Impressive delivery time'),
 (10, 5, 'Rider was courteous and delivery was swift');
 ```
+A view of the created review table:
+
+<img width="427" alt="Screenshot 2024-02-26 at 18 48 33" src="https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/assets/111298078/fab962a5-01a5-44e0-89cb-786f387a0463">
 
 
 5. Using your newly generated table - can you join all of the information together to form a table which has the following information for successful deliveries?
@@ -122,3 +129,7 @@ USING (order_id)
 GROUP BY customer_id, x.order_id, runner_id, customer_rating, Customer_review, order_time, pickup_time, duration, distance
 ORDER BY customer_id;
 ```
+Result Set:
+
+<img width="798" alt="Screenshot 2024-02-26 at 18 47 56" src="https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/assets/111298078/d81369ce-7305-463c-9f3a-499aa9c6eeb8">
+
