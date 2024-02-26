@@ -1,6 +1,13 @@
 # C. Ingredient Optimisation
+
+The Pizza recipes table used to look like this:
+
+<img width="139" alt="Screenshot 2024-02-26 at 20 39 44" src="https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/assets/111298078/b3691aab-448e-4b4f-9b34-740ecf8924e0">
+
+This makes it hard to work with the data to execute reasonable queries. Thus, there is a need to split the field into individual columns so that we can carry out any SQL queries. I actually got the formula I am using to do this on Github.
+
             
-### Split the merged columns and create a new table
+### Split the field into columns and create a new table
 
 ```sql
 CREATE TABLE Toppings_Split AS(
@@ -10,7 +17,15 @@ CREATE TABLE Toppings_Split AS(
 		JOIN json_table(trim(replace(json_array(t.toppings), ',', '","')),
 						'$[*]' columns (topping varchar(50) PATH '$')) j );
 ```
-                        
+
+This is how it looks after the above:
+
+<img width="136" alt="Screenshot 2024-02-26 at 20 40 13" src="https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/assets/111298078/9f7483cc-8e72-49df-9a55-41c4e9b518c1">
+
+The same thing will be done to the customer orders table where some exclusions and extras fields are also merged:
+
+<img width="319" alt="Screenshot 2024-02-26 at 20 47 50" src="https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/assets/111298078/b5a98661-b3e2-4df7-bb55-d52f0e46af67">
+
           
 ```sql
 CREATE TABLE split_customer_orders AS(                
@@ -46,6 +61,10 @@ UPDATE split_customer_orders
 SET Exclusions = NULL 
 WHERE Extras = 5 AND Exclusions = 4;
 ```
+- After the split, amendments and clean up of the customer orders table:
+
+<img width="361" alt="Screenshot 2024-02-26 at 20 48 56" src="https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/assets/111298078/b39358a2-0875-4f51-96c2-99eb6273a409">
+
 
 ---
                         
