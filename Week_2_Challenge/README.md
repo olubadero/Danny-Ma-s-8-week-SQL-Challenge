@@ -16,8 +16,8 @@ He has prepared for us an entity relationship diagram of his database design but
 
 All datasets exist within the pizza_runner database schema - be sure to include this reference within your SQL scripts as you start exploring the data and answering the case study questions.
 
-### Solutions
-[Data Cleaning and Transformation]
+### Solutions:
+- [Data Cleaning and Transformation]()
 - A. [Pizza Metrics]()
 - B. [Runner and Customer Experience]()
 - C. [Ingredient Optimisation]()
