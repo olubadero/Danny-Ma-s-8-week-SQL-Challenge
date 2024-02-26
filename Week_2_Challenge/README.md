@@ -17,9 +17,9 @@ He has prepared for us an entity relationship diagram of his database design but
 All datasets exist within the pizza_runner database schema - be sure to include this reference within your SQL scripts as you start exploring the data and answering the case study questions.
 
 ### Solutions:
-- [Data Cleaning and Transformation]()
-- A. [Pizza Metrics]()
-- B. [Runner and Customer Experience]()
-- C. [Ingredient Optimisation]()
-- D. [Pricing and Ratings]()
+- [Data Cleanin Up and Transformation](https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/blob/main/Week_2_Challenge/Data%20Clean%20Up%20and%20Transformation.md)
+- A. [Pizza Metrics](https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/blob/main/Week_2_Challenge/Pizza%20Metrics.md)
+- B. [Runner and Customer Experience](https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/blob/main/Week_2_Challenge/Runner%20and%20Customer%20Experience.md)
+- C. [Ingredient Optimisation](https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/blob/main/Week_2_Challenge/Ingredient%20Optimisation.md)
+- D. [Pricing and Ratings](https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/blob/main/Week_2_Challenge/Pricing%20and%20Ratings.md)
   
