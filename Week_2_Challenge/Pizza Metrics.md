@@ -5,6 +5,10 @@
 SELECT CONCAT(COUNT(*),' Pizzas ordered') AS Total_Ordered_Pizzas
 FROM new_customers_order;
 ```
+| Total_Ordered_Pizzas | 
+| ----------- | 
+| 14 Pizzas ordered | 
+
 -- 14 pizzas have been ordered so far
 
 ---
@@ -14,17 +18,27 @@ FROM new_customers_order;
 SELECT CONCAT(COUNT(distinct order_id),' unique customer orders') AS Unique_Customer_Orders
 FROM new_customers_order;
 ```
+| Unique_Customer_Orders | 
+| ----------- | 
+| 10 unique customer orders |
+
 -- There are 10 unique customer orders
 
 ---
 
 3. How many successful orders were delivered by each runner?
 ```sql
-SELECT runner_id, CONCAT(COUNT(*), ' successful deliveries') AS successful_deliveries
+SELECT runner_id, COUNT(*) AS Successful_Deliveries
 FROM runner_orders
 WHERE cancellation IS NULL
 GROUP BY runner_id;
 ```
+|runner_id | Successful_Deliveries|
+| ----------- | ----------- |
+|1	| 4  |
+|2	| 3  |
+|3	| 1  |
+
 -- Each Rider made the following successful deliveries:
 -- Runner 1 made 4, Runner 2 made 3 and Runner 3 made 1 delivery.
 
@@ -39,6 +53,11 @@ USING (Order_id)
 WHERE cancellation IS NULL
 GROUP BY pizza_id;
 ```
+| pizza_id	| Pizza_Types_Delivered |
+| ----------- | ----------- |
+| 1 | 9 |
+| 2| 3 |
+
 -- 9 Meatlover were delivere and 3 Vegetarians 
 
 ---
@@ -51,11 +70,24 @@ JOIN pizza_names
 USING (Pizza_id)
 GROUP BY customer_id, pizza_name
 ORDER BY customer_id;
+
+```
+| customer_id| pizza_name | 	Orders | 
+| ----------- | ----------- | ----------- | 
+| 101	| Meatlovers	| 2 | 
+| 101	| Vegetarian	| 1 | 
+| 102	| Meatlovers	| 2 | 
+| 102	| Vegetarian	| 1 | 
+| 103	| Meatlovers	| 3 | 
+| 103	| Vegetarian	| 1 | 
+| 104	| Meatlovers	| 3 | 
+| 105	| Vegetarian	| 1 | 
+
 -- 101 and 102 both ordered 2 Meatlovers and 1 Vegetarian Pizza
 -- 103 ordered 3 Meatlovers and 1 Vegetarian Pizza
 -- 104 ordered 3 Meatlovers pizza
 -- 105 ordered 1 Vegetarian Pizza. 
-```
+
 ---
 
 -- What was the maximum number of pizzas delivered in a single order?
@@ -69,6 +101,10 @@ GROUP BY Customer_id, order_id, Order_time
 ORDER BY Orders DESC
 LIMIT 1;
 ```
+| Customer_id	| order_id	| order_date	| orders |
+| ----------- | ----------- | ----------- | ----------- | 
+| 103	| 4	| 2020-01-04	| 3 |
+
 -- Customer 103 ordered 3 pizzas on the 4th of January
 
 ---
@@ -91,12 +127,13 @@ GROUP BY customer_id;
 
 -- number of pizzas that had changes and those that had no changes
 
--- customer_id, Changes, NO_Changes
--- 	'101',		  '0',		'2'
--- 	'102',		  '0',		'3'
--- 	'103',		  '3',		'0'
--- 	'104',		  '2',		'1'
--- 	'105',		  '1',		'0'
+| customer_id |	Changes | NO_Changes |
+| ----------- | ----------- | ----------- | 
+| 101	| 0	| 2 |
+| 102	| 0	| 3 |
+| 103	| 3	| 0 |
+| 104	| 2	| 1 |
+| 105	| 1	| 0 |
 
 ---
 
@@ -109,6 +146,11 @@ USING (Order_id)
 WHERE cancellation IS NULL AND exclusions IS NOT NULL AND extras IS NOT NULL
 GROUP BY Customer_id;
 ```
+
+| Customer_id | Number_of_Pizzas |
+| ----------- | ----------- |
+| 104	| 1 |
+
 -- Customer 104 ordered 1 pizza that had both exclusions and extras 
 
 ---
@@ -122,15 +164,16 @@ ORDER BY ORDER_DATE;
 ```
 
 -- The total volume of pizza orders by date and hour is distributed as follows
--- order_date, 	order_hour, order_volume
--- '2020-01-11', 	'18', 		'2'
--- '2020-01-10', 	'11', 		'1'
--- '2020-01-09', 	'23', 		'1'
--- '2020-01-08', 	'21', 		'3'
--- '2020-01-04', 	'13', 		'3'
--- '2020-01-02', 	'23', 		'2'
--- '2020-01-01', 	'18', 		'1'
--- '2020-01-01', 	'19', 		'1'
+| order_date	| order_hour	| order_volume | 
+| ----------- | ----------- | ----------- |
+| 2020-01-01	| 18	| 1
+| 2020-01-01	| 19	| 1
+| 2020-01-02	| 23	| 2
+| 2020-01-04	| 13	| 3
+| 2020-01-08	| 21	| 3
+| 2020-01-09	| 23	| 1
+| 2020-01-10	| 11	| 1
+| 2020-01-11	| 18	| 2
 
 ---
 
