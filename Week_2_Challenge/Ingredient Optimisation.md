@@ -22,6 +22,8 @@ This is how it looks after the above:
 
 <img width="136" alt="Screenshot 2024-02-26 at 20 40 13" src="https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/assets/111298078/9f7483cc-8e72-49df-9a55-41c4e9b518c1">
 
+----
+
 The same thing will be done to the customer orders table where some exclusions and extras fields are also merged:
 
 <img width="319" alt="Screenshot 2024-02-26 at 20 47 50" src="https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/assets/111298078/b5a98661-b3e2-4df7-bb55-d52f0e46af67">
