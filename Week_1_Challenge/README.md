@@ -192,13 +192,11 @@ FROM prior_purchase
 WHERE order_standing = 1;
 ```
 
-| Year | Total_Sales_Before |Total_Sales_After | difference_percentage |
-| ----------- | ----------- |----------- | ----------- |
-| 2018| '$2125140809' |'$-152325394'| '-2.14%' |
-| 2019 | '$2125140809' |'$-1523253983423' | '-0.14%' |
-| 2020| '$2125140809'|'$-152325394'| '-8.14%' |
-| 2021 | '$2125140809' |'$-1523253983423' | '-35.14%' |
-
+| Customer_ID | Product_Name |
+| ----------- | ----------- |
+| A | Curry |
+| A | Sushi |
+| B | Sushi |
 
 -- The item purchased before joining by A is Sushi and Curry, whilst B is Sushi
 
@@ -216,12 +214,10 @@ WHERE order_date < join_date
 GROUP BY customer_id;
 ```
 
-| Year | Total_Sales_Before |Total_Sales_After | difference_percentage |
-| ----------- | ----------- |----------- | ----------- |
-| 2018| '$2125140809' |'$-152325394'| '-2.14%' |
-| 2019 | '$2125140809' |'$-1523253983423' | '-0.14%' |
-| 2020| '$2125140809'|'$-152325394'| '-8.14%' |
-| 2021 | '$2125140809' |'$-1523253983423' | '-35.14%' |
+| Customer_ID | Total_Item | Total_Spend |
+| ----------- | ----------- |----------- |
+| A | 2 | $25 | 
+| B | 2 | $40 | 
 
 
 -- A ordered twice and spent $25, B ordered twice and spent $40
@@ -239,16 +235,13 @@ USING (product_id)
 GROUP BY customer_id;
 ```
 
-| Year | Total_Sales_Before |Total_Sales_After | difference_percentage |
-| ----------- | ----------- |----------- | ----------- |
-| 2018| '$2125140809' |'$-152325394'| '-2.14%' |
-| 2019 | '$2125140809' |'$-1523253983423' | '-0.14%' |
-| 2020| '$2125140809'|'$-152325394'| '-8.14%' |
-| 2021 | '$2125140809' |'$-1523253983423' | '-35.14%' |
-
+| Customer_ID | Points_Accrued |
+| ----------- | ----------- |
+| A | 860 | 
+| B | 940 | 
+| C | 360 |
 
 -- A has 860 points, B has 940 points, C has 360 points 
-
 
 
 10. In the first week after a customer joins the program (including their join date) they earn 2x points on all items, not just sushi - how many points do customer A and B have at the end of January?
@@ -268,10 +261,10 @@ GROUP BY customer_id
 ORDER BY customer_id;
 ```
 
-| Year | Total_Sales_Before |Total_Sales_After | difference_percentage |
-| ----------- | ----------- |----------- | ----------- |
-| 2018| '$2125140809' |'$-152325394'| '-2.14%' |
-| 2019 | '$2125140809' |'$-1523253983423' | '-0.14%' |
-| 2020| '$2125140809'|'$-152325394'| '-8.14%' |
-| 2021 | '$2125140809' |'$-1523253983423' | '-35.14%' |
+| Customer_ID | Points_Accrued |
+| ----------- | ----------- |
+| A | 1520 | 
+| B | 1090 | 
+
+
 -- A has 1520 points, B has 1090 points. 
