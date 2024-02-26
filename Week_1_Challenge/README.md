@@ -25,7 +25,7 @@ Danny has shared with you 3 key datasets for this case study:
 ![answer_questions](https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/assets/111298078/99614ad3-dc19-4ca9-bf16-0212f8ff4bcb)
 
 
-I will be executing my SQL queries using the MySQL workbench.
+**I will be executing my SQL queries using the MySQL workbench.**
 
 Each of the following case study questions can be answered using a single SQL statement:
 
@@ -38,6 +38,13 @@ USING (product_id)
 GROUP BY customer_id
 ORDER BY customer_id;
 ```
+
+| Customer_ID| Total_Spend |
+| ----------- | ----------- |
+| A | $76 |
+| B| $74|
+| C | $36 |
+
 -- A is $76, B is $74, C is $36
 
 
@@ -49,9 +56,14 @@ SELECT customer_id, COUNT(distinct Order_date) AS visit_days
 FROM sales
 GROUP BY customer_id;
 ```
+
+| Customer_ID | Visit_Days |
+| ----------- | ----------- |
+| A | 4 |
+| B | 6 |
+| C | 2 |
+
 -- A is 4, B is 6, C is 2
-
-
 
 3. What was the first item from the menu purchased by each customer?
 
@@ -66,8 +78,16 @@ SELECT customer_id, product_name
 FROM purchase
 WHERE Orders = 1;
 ```
--- A is Sushi and Curry; B is Curry; C is Ramen (2x)
 
+| Customer_ID | Product_Name |
+| ----------- | ----------- |
+| A | Sushi |
+| A | Curry |
+| B | Curry |
+| C | Ramen |
+| C | Ramen |
+
+-- A is Sushi and Curry; B is Curry; C is Ramen (2x)
 
 
 4. What is the most purchased item on the menu and how many times was it purchased by all customers?
@@ -91,9 +111,15 @@ JOIN most_purchased
 USING(product_name)
 GROUP BY customer_id;
 ```
+| Customer_ID | Total_Ramen_Purchased |
+| ----------- | ----------- |
+| A | 3 |
+| B | 2 |
+| C | 3 |
+
+
 -- Most purchased item is Ramen and it was purchased 8 times, 
 -- A and C ordered it 3x respectively and B ordered it 2x
-
 
 
 5. Which item was the most popular for each customer?
@@ -110,6 +136,15 @@ SELECT customer_id, product_name
 FROM popularity
 WHERE order_ranking = 1;
 ```
+
+| Customer_ID | Product_Name |
+| ----------- | ----------- |
+| A | Ramen |
+| B | Curry |
+| B | Sushi |
+| B | Ramen |
+| C | Ramen |
+
 -- The most popular item for A is Ramen; for B it is Curry, Sushi and Ramen; and for C is Ramen
 
 
@@ -130,8 +165,14 @@ SELECT customer_id, product_name
 FROM First_order
 WHERE order_standing = 1;
 ```
--- Only A and B joined and their first orders were Curry and Sushi respectively
 
+| Customer_ID | Product_Name |
+| ----------- | ----------- |
+| A | Curry |
+| B | Sushi |
+
+
+-- Only A and B joined and their first orders were Curry and Sushi respectively
 
 
 7. Which item was purchased just before the customer became a member?
@@ -150,8 +191,16 @@ SELECT customer_id, product_name
 FROM prior_purchase
 WHERE order_standing = 1;
 ```
--- The item purchased before joining by A is Sushi and Curry, whilst B is Sushi
 
+| Year | Total_Sales_Before |Total_Sales_After | difference_percentage |
+| ----------- | ----------- |----------- | ----------- |
+| 2018| '$2125140809' |'$-152325394'| '-2.14%' |
+| 2019 | '$2125140809' |'$-1523253983423' | '-0.14%' |
+| 2020| '$2125140809'|'$-152325394'| '-8.14%' |
+| 2021 | '$2125140809' |'$-1523253983423' | '-35.14%' |
+
+
+-- The item purchased before joining by A is Sushi and Curry, whilst B is Sushi
 
 
 8. What is the total items and amount spent for each member before they became a member?
@@ -166,8 +215,16 @@ USING (Customer_id)
 WHERE order_date < join_date
 GROUP BY customer_id;
 ```
--- A ordered twice and spent $25, B ordered twice and spent $40
 
+| Year | Total_Sales_Before |Total_Sales_After | difference_percentage |
+| ----------- | ----------- |----------- | ----------- |
+| 2018| '$2125140809' |'$-152325394'| '-2.14%' |
+| 2019 | '$2125140809' |'$-1523253983423' | '-0.14%' |
+| 2020| '$2125140809'|'$-152325394'| '-8.14%' |
+| 2021 | '$2125140809' |'$-1523253983423' | '-35.14%' |
+
+
+-- A ordered twice and spent $25, B ordered twice and spent $40
 
  
 9. If each $1 spent equates to 10 points and sushi has a 2x points multiplier - how many points would each customer have?
@@ -181,6 +238,15 @@ JOIN menu
 USING (product_id)
 GROUP BY customer_id;
 ```
+
+| Year | Total_Sales_Before |Total_Sales_After | difference_percentage |
+| ----------- | ----------- |----------- | ----------- |
+| 2018| '$2125140809' |'$-152325394'| '-2.14%' |
+| 2019 | '$2125140809' |'$-1523253983423' | '-0.14%' |
+| 2020| '$2125140809'|'$-152325394'| '-8.14%' |
+| 2021 | '$2125140809' |'$-1523253983423' | '-35.14%' |
+
+
 -- A has 860 points, B has 940 points, C has 360 points 
 
 
@@ -201,4 +267,11 @@ WHERE MONTHNAME(order_date) = 'January'
 GROUP BY customer_id
 ORDER BY customer_id;
 ```
+
+| Year | Total_Sales_Before |Total_Sales_After | difference_percentage |
+| ----------- | ----------- |----------- | ----------- |
+| 2018| '$2125140809' |'$-152325394'| '-2.14%' |
+| 2019 | '$2125140809' |'$-1523253983423' | '-0.14%' |
+| 2020| '$2125140809'|'$-152325394'| '-8.14%' |
+| 2021 | '$2125140809' |'$-1523253983423' | '-35.14%' |
 -- A has 1520 points, B has 1090 points. 
