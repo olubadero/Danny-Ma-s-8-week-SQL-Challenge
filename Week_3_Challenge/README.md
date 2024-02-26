@@ -15,3 +15,5 @@ All datasets exist within the foodie_fi database schema - be sure to include thi
 ### Solutions:
 - A. [Customer Journey](https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/blob/main/Week_3_Challenge/Foodie_Fi%20(Customer%20Journey).md)
 - B. [Data Analysis](https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/blob/main/Week_3_Challenge/Foodie_Fi_Data_Analysis_Solutions.md)
+
+You can view and copy the [schema](https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/blob/main/Week_3_Challenge/Foodie_Fi%20Schema.sql) for practice
