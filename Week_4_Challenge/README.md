@@ -23,6 +23,9 @@ The Data Bank team have prepared a data model for this case study as well as a f
 
 Solutions:
 
+![answers](https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/assets/111298078/3c3da31c-4e5d-4614-99e6-faff55cd84aa)
+
+
 - A. [Customer Nodes Exploration]()
 - B. [Customer Transactions]()
 
