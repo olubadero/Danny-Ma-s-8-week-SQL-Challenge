@@ -7,9 +7,10 @@ FROM Subscriptions
 JOIN Plans
 USING (Plan_Id);
 ```
--- Total_Foodie_Fi_Customers
--- '1000'
-   
+
+| Total_Foodie_Fi_Customers | 
+| ----------- | 
+| 1000 | 
 ----
 
 2. What is the monthly distribution of trial plan start_date values for our dataset 
@@ -22,19 +23,8 @@ USING (Plan_Id)
 WHERE plan_name = 'Trial'
 GROUP BY MONTH(Start_date), MONTHNAME(Start_date);
 ```
--- Month, 	Monthname, Distribution
--- '1', 	'January', 		'88'
--- '2', 	'February', 	'68'
--- '3', 	'March', 		'94'
--- '4', 	'April', 		'81'
--- '5', 	'May', 			'88'
--- '6', 	'June', 		'79'
--- '7', 	'July', 		'89'
--- '8', 	'August', 		'88'
--- '9', 	'September', 	'87'
--- '10', 	'October', 		'79'
--- '11', 	'November', 	'75'
--- '12', 	'December',		'84'
+
+<img width="157" alt="Screenshot 2024-02-27 at 08 47 46" src="https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/assets/111298078/e6879833-6972-4103-a190-bd10a7d775cd">
 
 ----
 3. What plan start_date values occur after the year 2020 for our dataset? Show the breakdown by count of events for each plan_name
@@ -47,11 +37,13 @@ WHERE YEAR(start_date) > 2020
 GROUP BY plan_name;
 ```
 
--- plan_name, 		Count_Events
--- 'basic monthly', 	'8'
--- 'churn', 			'71'
--- 'pro annual', 		'63'
--- 'pro monthly', 		'60'
+| plan_name | Count_Events |
+| ----------- |  ----------- | 
+| basic monthly	| 8 |
+| churn	| 71 |
+| pro annual	| 63 |
+| pro monthly |	60 |
+
 
 ----
 
@@ -68,6 +60,9 @@ FROM Foodie_Fi.Subscriptions
 JOIN Foodie_Fi.Plans
 USING (Plan_Id);
 ```
+| total_churned_customers	 | Churned_percentage | 
+| ----------- |  ----------- | 
+| 307 | 	30.7% | 
 
 -- 307 customers churned, which represents 30.7% of Foodie_Fi's customer base
 
@@ -89,6 +84,11 @@ WITH actions AS(
 SELECT CONCAT(ROUND((SELECT COUNT(*) FROM Churners)/COUNT(distinct customer_id) * 100), '%') AS churned_percentage
 FROM actions;
 ```
+|churned_percentage  | 
+|  ----------- | 
+| 9%  | 
+
+
 -- This represents 9% of the entire customer base
 
 ----
@@ -121,11 +121,12 @@ GROUP BY subsequent_action
 ORDER BY total_customers DESC;
 ```
 
--- subsequent_action, total_customers, customer_percentage
--- 'basic monthly', 		'546', 			'54.60%'
--- 'pro monthly', 			'325', 			'32.50%'
--- 'churn', 				'92', 			'9.20%'
--- 'pro annual', 			'37', 			'3.70%'
+| subsequent_action |	total_customers | customer_percentage |
+| ----------- |  ----------- |  ----------- | 
+| basic monthly	 | 546	 | 54.60% |
+| pro monthly |	325 |	32.50% |
+| churn |	92 |	9.20% |
+| pro annual |	37 |	3.70% |
 
 ----
 
@@ -148,12 +149,13 @@ FROM Dates
 WHERE subsequent_date IS NULL
 GROUP BY plan_name;
 ```
---  plan_name,		 total_customers, Percentage
--- 'basic monthly', 		'224', 		'22.40%'
--- 'churn', 				'236', 		'23.60%'
--- 'pro annual', 			'195', 		'19.50%'
--- 'pro monthly', 			'326', 		'32.60%'
--- 'trial', 				'19', 		'1.90%'
+| plan_name | 	total_customers | Percentage | 
+| ----------- |  ----------- |  ----------- |
+| basic monthly |	224 | 	22.40% | 
+| churn |	236 | 	23.60% | 
+| pro annual | 	195 | 	19.50% | 
+| pro monthly | 	326 | 	32.60% | 
+| trial | 	19 | 	1.90% | 
 
 ----
 
@@ -165,6 +167,11 @@ JOIN Foodie_Fi.Plans
 USING (Plan_Id)
 WHERE YEAR(start_date) = 2020 AND plan_name = 'pro annual';
 ```
+|  total_customers |
+|  ----------- |
+|  195 |
+
+
 -- total of '195' customers upgraded to Pro Annual plan in 2020
 
 ----
@@ -183,11 +190,15 @@ WITH Trial AS (
 			JOIN Plans
 			USING (Plan_Id)
             WHERE Plan_name = 'pro annual')
-SELECT ROUND(AVG(TIMESTAMPDIFF(DAY, Trial_Dates, Annual_Dates))) Average_Annual_Subscription_Day
+SELECT ROUND(AVG(TIMESTAMPDIFF(DAY, Trial_Dates, Annual_Dates))) AS Average_Annual_Subscription_Day
 FROM trial
 JOIN annual
 USING (Customer_ID);
 ```
+|  Average_Annual_Subscription_Day |
+|  ----------- |
+|  105 |
+
 
 -- The average number of days it takes for a customer to subscribe to an annual plan after trial is 105 day
 
@@ -213,5 +224,9 @@ SELECT COUNT(*) Total_Customers
 FROM actions
 WHERE plan_name = 'pro monthly' AND subsequent_subscription = 'basic monthly';
 ```
+|  Total_Customers |
+|  ----------- |
+|  0 |
+
 
 -- 0 customers downgraded from a pro monthly to a basic monthly plan in 2020
