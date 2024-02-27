@@ -21,5 +21,5 @@ The Entity Relationship Diagram is shown below with the data types made clear, p
 
 Solutions:
 1. [Data Cleansing steps](https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/blob/main/week_5_challenge/Data%20Cleansing.md)
-2. [Data Exploration]()
+2. [Data Exploration](https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/blob/main/week_5_challenge/Data%20Exploration.md)
 3. [Before & After Analysis]()
