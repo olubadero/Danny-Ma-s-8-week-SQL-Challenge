@@ -21,7 +21,7 @@ The Data Bank team have prepared a data model for this case study as well as a f
 ![Screenshot 2024-02-27 at 09 17 18](https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/assets/111298078/125328c4-dde3-435d-9d8d-530f63aa5732)
 
 
-Solutions:
+## Solutions:
 
 ![answers](https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/assets/111298078/3c3da31c-4e5d-4614-99e6-faff55cd84aa)
 
