@@ -13,6 +13,10 @@ Danny has shared the data design for Foodie-Fi and also short descriptions on ea
 All datasets exist within the foodie_fi database schema - be sure to include this reference within your SQL scripts as you start exploring the data and answering the case study questions.
 
 ### Solutions:
+
+![answers](https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/assets/111298078/a29beb59-68b6-48eb-a15a-44051df8149a)
+
+
 - A. [Customer Journey](https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/blob/main/Week_3_Challenge/Foodie_Fi%20(Customer%20Journey).md)
 - B. [Data Analysis](https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/blob/main/Week_3_Challenge/Foodie_Fi_Data_Analysis_Solutions.md)
 
