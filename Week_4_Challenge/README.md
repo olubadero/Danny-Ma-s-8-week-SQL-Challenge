@@ -26,7 +26,7 @@ Solutions:
 ![answers](https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/assets/111298078/3c3da31c-4e5d-4614-99e6-faff55cd84aa)
 
 
-- A. [Customer Nodes Exploration]()
-- B. [Customer Transactions]()
+- A. [Customer Nodes Exploration](https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/blob/main/Week_4_Challenge/Customer%20Nodes%20Exploration.md)
+- B. [Customer Transactions](https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/blob/main/Week_4_Challenge/Customer%20Transactions.md)
 
 You can also view and copy the [Schema](https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/blob/main/Week_4_Challenge/Data_Bank%20Schema.sql) for practice. 
