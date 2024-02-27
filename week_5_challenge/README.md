@@ -20,6 +20,6 @@ The Entity Relationship Diagram is shown below with the data types made clear, p
 <img width="177" alt="Screenshot 2024-02-27 at 10 35 36" src="https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/assets/111298078/b4a2ea5f-6027-45b4-a18e-702a285fe14b">
 
 Solutions:
-1. [Data Cleansing steps]()
+1. [Data Cleansing steps](https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/blob/main/week_5_challenge/Data%20Cleansing.md)
 2. [Data Exploration]()
 3. [Before & After Analysis]()
