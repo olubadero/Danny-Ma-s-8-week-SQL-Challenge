@@ -12,8 +12,6 @@ Using the following DDL schema details to create an ERD for all the Clique Bait 
 
 Click [here](https://www.db-fiddle.com/f/jmnwogTsUE8hGqkZv9H7E8/17) to access the DB Diagram tool to create the ERD.
 
-[here](https://www.db-fiddle.com/f/jmnwogTsUE8hGqkZv9H7E8/17)
-
 
 ### 2. Digital Analysis
 Using the available datasets - answer the following questions using a single query for each one:
