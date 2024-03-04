@@ -27,7 +27,7 @@ Using the available datasets - answer the following questions using a single que
 - What are the top 3 products by purchases?
 
   
-### 3. Product Funnel Analysis
+### 3. [Product Funnel Analysis](https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/blob/main/week_6_challenge/Product%20Funnel%20Analysis.md)
 Using a single SQL query - create a new output table which has the following details:
 
 - How many times was each product viewed?
@@ -44,7 +44,7 @@ Use your 2 new output tables - answer the following questions:
 - What is the average conversion rate from view to cart add?
 - What is the average conversion rate from cart add to purchase?
 
-### 4. Campaigns Analysis
+### 4. [Campaigns Analysis](https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/blob/main/week_6_challenge/Campaigns%20Analysis.md)
 Generate a table that has 1 single row for every unique visit_id record and has the following columns:
 
 - user_id
