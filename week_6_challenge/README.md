@@ -13,7 +13,7 @@ Using the following DDL schema details to create an ERD for all the Clique Bait 
 Click [here](https://www.db-fiddle.com/f/jmnwogTsUE8hGqkZv9H7E8/17) to access the DB Diagram tool to create the ERD.
 
 
-### 2. Digital Analysis
+### 2. [Digital Analysis](https://github.com/olubadero/Danny_Mas_8-week_SQL_Challenge/blob/main/week_6_challenge/Digital%20Analysis.md)
 Using the available datasets - answer the following questions using a single query for each one:
 
 - How many users are there?
