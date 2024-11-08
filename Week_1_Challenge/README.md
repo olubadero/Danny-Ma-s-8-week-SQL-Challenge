@@ -257,27 +257,27 @@ GROUP BY customer_id;
 10. In the first week after a customer joins the program (including their join date) they earn 2x points on all items, not just sushi - how many points do customer A and B have at the end of January?
 
 ```sql
-SELECT customer_id, SUM(CASE WHEN product_name = 'Sushi' THEN PRICE * 20
-			WHEN datediff(join_date, order_date) <= 7 THEN PRICE * 20
-            ELSE PRICE * 10
-            END) AS Points_Accrued 
-FROM Sales
-JOIN menu
-USING (product_id) 
-JOIN members
-USING (Customer_id)
-WHERE MONTHNAME(order_date) = 'January'
-GROUP BY customer_id
-ORDER BY customer_id;
+SELECT S.Customer_ID,
+		SUM(CASE WHEN S.product_id = 1 THEN Price * 20 
+            WHEN  datediff(order_date, join_date) <=7  THEN Price * 20 
+            ELSE Price * 10 END) AS Total_Points
+FROM sales AS S
+JOIN Menu AS X
+	ON S.product_id = x.product_id
+JOIN members AS M
+	ON S.customer_id = M.customer_id
+WHERE order_date >= join_date AND MONTH(Order_date) = 1
+GROUP BY S.Customer_ID
+ORDER BY S.Customer_ID;
 ```
 
 | Customer_ID | Points_Accrued |
 | ----------- | ----------- |
-| A | 1520 | 
-| B | 1090 | 
+| A | 1020 | 
+| B | 440 | 
 
 
--- A has 1520 points, B has 1090 points. 
+-- A has 1020 points, B has 440 points. 
 
 ---
 
